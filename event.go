@@ -22,10 +22,10 @@ type APIEvent struct {
 }
 
 type APIWebHook struct {
-	father *AEvent
-	Attempt_number int `json:"attempt_number,omitempty"`
-	Data   APIEventData `json:"event,omitempty"`
-	Errors []APIError   `json:"errors,omitempty"`
+	father         *AEvent
+	Attempt_number int          `json:"attempt_number,omitempty"`
+	Data           APIEventData `json:"event,omitempty"`
+	Errors         []APIError   `json:"errors,omitempty"`
 }
 
 type APIEvents struct {

@@ -3,10 +3,10 @@ package coinbase
 import (
 	"bytes"
 	"encoding/json"
-	"io"
-	"net/http"
 	"errors"
+	"io"
 	"io/ioutil"
+	"net/http"
 )
 
 const (
@@ -84,11 +84,11 @@ func (a *APIClient) Fetch(method, path string, body interface{}, result interfac
 	if err != nil {
 		return err
 	}
-	if (resp.StatusCode >= 400){
-	    bodyBytes, err := ioutil.ReadAll(resp.Body)
-	    if err != nil {
-		return err
-	    }
+	if resp.StatusCode >= 400 {
+		bodyBytes, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+			return err
+		}
 		return errors.New(string(bodyBytes))
 	}
 	err = json.NewDecoder(resp.Body).Decode(result)

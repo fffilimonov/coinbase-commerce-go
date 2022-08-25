@@ -38,15 +38,12 @@ type APICheckoutsRequest struct {
 	Errors     []APIError        `json:"errors,omitempty"`
 }
 
-
-
 // Get provides the APICharge instance of the given charge id.
 func (a *ACheckout) Get(id string) (checkout APICheckout, err error) {
 	err = a.Api.Fetch("GET", "/checkouts/"+id, nil, &checkout)
 	checkout.father = a
 	return
 }
-
 
 // List create a APICharges object with a list of APICharge instance.
 func (a *ACheckout) List() (checkouts APICheckouts, err error) {
@@ -73,6 +70,7 @@ func (a *ACheckout) Update(id string, data interface{}) (checkout APICheckout, e
 	checkout.father = a
 	return
 }
+
 // Delete will erase the id given checkout
 func (a *ACheckout) Delete(id string) (err error) {
 	err = a.Api.Fetch("DELETE", "/checkouts/"+id, nil, nil)

@@ -7,9 +7,9 @@ import (
 type APIError struct {
 	Type    string `json:"type"`
 	Message string `json:"message"`
-	Code		int
+	Code    int
 }
 
 func (e *APIError) Error() string {
-	return fmt.Sprintf("Code: %d type: %s\nmessage:%s",e.Code, e.Type, e.Message)
+	return fmt.Sprintf("Code: %d type: %s\nmessage:%s", e.Code, e.Type, e.Message)
 }

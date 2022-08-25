@@ -1,6 +1,7 @@
 package coinbase
 
 import "time"
+
 // ACharge is a class hosted inside the APIClient providing methods about charge
 type ACharge struct {
 	Api *APIClient
@@ -9,7 +10,7 @@ type ACharge struct {
 // APIChargeData is the golang struct equivalent of the Charge resource. It's findable inside APICharge object
 type APIChargeData struct {
 	Id           string     `json:"id,omitempty"`
-	Ressource     string     `json:"ressource,omitempty"`
+	Ressource    string     `json:"ressource,omitempty"`
 	Code         string     `json:"code,omitempty"`
 	Name         string     `json:"name,omitempty"`
 	Description  string     `json:"description,omitempty"`
@@ -34,35 +35,59 @@ type APIChargeData struct {
 		Bitcoin     Money `json:"bitcoin,omitempty"`
 		Bitcoincash Money `json:"bitcoincash,omitempty"`
 		Ethereum    Money `json:"ethereum,omitempty"`
+		Dogecoin    Money `json:"dogecoin,omitempty"`
 		Litecoin    Money `json:"litecoin,omitempty"`
+		Tether      Money `json:"tether,omitempty"`
+		Shibainu    Money `json:"shibainu,omitempty"`
+		Apecoin     Money `json:"apecoin,omitempty"`
+		Dai         Money `json:"dai,omitempty"`
+		Usdc        Money `json:"usdc,omitempty"`
 	} `json:"pricing,omitempty"`
 	Payments []struct {
-		Network string`json:"network,omitepty"`
+		Network        string `json:"network,omitepty"`
 		Transaction_id string `json:"transaction_id,omitepty"`
-		Status string `json:"status,omitepty"`
-		Value struct {
+		Status         string `json:"status,omitepty"`
+		Value          struct {
 			Local struct {
-				Amount string `json:"amount,omitepty"`
+				Amount   string `json:"amount,omitepty"`
 				Currency string `json:"currency,omitepty"`
 			}
 			Crypto struct {
-				Amount string `json:"amount,omitepty"`
+				Amount   string `json:"amount,omitepty"`
 				Currency string `json:"currency,omitepty"`
-			}`json:"crypto,omitepty"`
+			} `json:"crypto,omitepty"`
 		} `json:"value,omitepty"`
 		Block struct {
-			Height int `json:"height,omitepty"`
-			Hash string `json:"hash,omitepty"`
-			Confirmations_accumulated int `json:"confirmations_accumulated ,omitepty"`
-			Confirmations_required int `json:"confirmations_required,omitepty"`
+			Height                    int    `json:"height,omitepty"`
+			Hash                      string `json:"hash,omitepty"`
+			Confirmations_accumulated int    `json:"confirmations_accumulated ,omitepty"`
+			Confirmations_required    int    `json:"confirmations_required,omitepty"`
 		} `json:"block,omitepty"`
 	} `json:"payments,omitempty"`
 	Addresses struct {
-		Bitcoin     string `json:"bitcoin,omitempty"`
-		Bitcoincash string `json:"bitcoincash,omitempty"`
 		Ethereum    string `json:"ethereum,omitempty"`
+		Usdc        string `json:"usdc,omitempty"`
+		Dai         string `json:"dai,omitempty"`
+		Apecoin     string `json:"apecoin,omitempty"`
+		Shibainu    string `json:"shibainu,omitempty"`
+		Tether      string `json:"tether,omitempty"`
+		Bitcoincash string `json:"bitcoincash,omitempty"`
+		Dogecoin    string `json:"dogecoin,omitempty"`
 		Litecoin    string `json:"litecoin,omitempty"`
+		Bitcoin     string `json:"bitcoin,omitempty"`
 	} `json:"addresses,omitempty"`
+	ExchangeRates struct {
+		ETHUSD  string `json:"ETH-USD,omitempty"`
+		BTCUSD  string `json:"BTC-USD,omitempty"`
+		LTCUSD  string `json:"LTC-USD,omitempty"`
+		DOGEUSD string `json:"DOGE-USD,omitempty"`
+		BCHUSD  string `json:"BCH-USD,omitempty"`
+		USDCUSD string `json:"USDC-USD,omitempty"`
+		DAIUSD  string `json:"DAI-USD,omitempty"`
+		APEUSD  string `json:"APE-USD,omitempty"`
+		SHIBUSD string `json:"SHIB-USD,omitempty"`
+		USDTUSD string `json:"USDT-USD,omitempty"`
+	} `json:"exchange_rates,omitempty"`
 	Local_price Money `json:"local_price,omitempty"`
 }
 

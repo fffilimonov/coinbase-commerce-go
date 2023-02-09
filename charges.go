@@ -42,6 +42,9 @@ type APIChargeData struct {
 		Apecoin     Money `json:"apecoin,omitempty"`
 		Dai         Money `json:"dai,omitempty"`
 		Usdc        Money `json:"usdc,omitempty"`
+		Polygon     Money `json:"polygon,omitempty"`
+		Pusdc       Money `json:"pusdc,omitempty"`
+		Pweth       Money `json:"pweth,omitempty"`
 	} `json:"pricing,omitempty"`
 	Payments []struct {
 		Network        string `json:"network,omitepty"`
@@ -75,18 +78,24 @@ type APIChargeData struct {
 		Dogecoin    string `json:"dogecoin,omitempty"`
 		Litecoin    string `json:"litecoin,omitempty"`
 		Bitcoin     string `json:"bitcoin,omitempty"`
+		Polygon     string `json:"polygon,omitempty"`
+		Pusdc       string `json:"pusdc,omitempty"`
+		Pweth       string `json:"pweth,omitempty"`
 	} `json:"addresses,omitempty"`
 	ExchangeRates struct {
-		ETHUSD  string `json:"ETH-USD,omitempty"`
-		BTCUSD  string `json:"BTC-USD,omitempty"`
-		LTCUSD  string `json:"LTC-USD,omitempty"`
-		DOGEUSD string `json:"DOGE-USD,omitempty"`
-		BCHUSD  string `json:"BCH-USD,omitempty"`
-		USDCUSD string `json:"USDC-USD,omitempty"`
-		DAIUSD  string `json:"DAI-USD,omitempty"`
-		APEUSD  string `json:"APE-USD,omitempty"`
-		SHIBUSD string `json:"SHIB-USD,omitempty"`
-		USDTUSD string `json:"USDT-USD,omitempty"`
+		ETHUSD    string `json:"ETH-USD,omitempty"`
+		BTCUSD    string `json:"BTC-USD,omitempty"`
+		LTCUSD    string `json:"LTC-USD,omitempty"`
+		DOGEUSD   string `json:"DOGE-USD,omitempty"`
+		BCHUSD    string `json:"BCH-USD,omitempty"`
+		USDCUSD   string `json:"USDC-USD,omitempty"`
+		DAIUSD    string `json:"DAI-USD,omitempty"`
+		APEUSD    string `json:"APE-USD,omitempty"`
+		SHIBUSD   string `json:"SHIB-USD,omitempty"`
+		USDTUSD   string `json:"USDT-USD,omitempty"`
+		PMATICUSD string `json:"PMATIC-USD,omitempty"`
+		PUSDCUSD  string `json:"PUSDC-USD,omitempty"`
+		PWETHUSD  string `json:"PWETH-USD,omitempty"`
 	} `json:"exchange_rates,omitempty"`
 	Local_price Money `json:"local_price,omitempty"`
 }
